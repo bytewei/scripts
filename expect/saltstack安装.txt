@@ -1,0 +1,45 @@
+saltstack安装比较简单：
+
+###########################################################
+
+master、minion安装：
+
+1.salt-master安装：
+[root]# rpm -ivh epel-release-latest-6.noarch.rpm
+[root]# yum install -y salt-master
+[root]# service salt-master start
+[root]# chkconfig salt-master on
+
+2.salt-minion安装：
+[root]# rpm -ivh epel-release-latest-6.noarch.rpm
+[root]# yum install -y salt-minion
+[root]# service salt-minion start
+[root]# chkconfig salt-minion on
+
+备注：epel-release-latest-6.noarch.rpm文件可以参考expect/scripts/epel-release-latest-6.noarch.rpm 。
+
+###########################################################
+
+多Master部署：
+
+1.在另一台机器上安装salt-master
+yum -y install salt-master
+2.将原来master上的master密钥拷贝到新的master是一份
+scp /etc/salt/pki/master/master* newmaster:/etc/salt/pki/master/
+3.启动新的Master
+service salt-master start
+4.修改minion配置文件/etc/salt/minion设置两个master
+  master:
+    - master1
+    - master2
+5.重启minion
+service salt-minion restart
+6.在新的master上接受所有key
+salt-key -L
+salt-key -A
+注意:
+1.2个master并不会共享Minion keys，一个master删除了一个key不会影响另一个
+2.不会自动同步File_roots,所以需要手动去维护，如果用git就没问题了
+3.不会自动同步Pillar_Roots，所以需要手工去维护，也可以用git
+4.Master的配置文件也是独立的
+
