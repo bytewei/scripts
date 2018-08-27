@@ -9,3 +9,15 @@
    [3].一键检查目标服务器是否免认证。<br>
 4. expect/expect.sh为脚本执行入口，在执行前请先编辑服务器文件：expect/conf/passwd.txt，行文格式分别为：服务器IP、ssh端口号、ssh账户、ssh密码；<br>
 
+## 脚本结构
+脚本目录如下：<br>
+[renxiaowei]$ tree expect/
+expect/
+├── conf
+│   ├── check_ip.sh
+│   ├── check_ssh.sh
+│   └── passwd.txt
+├── expect.sh
+└── scripts
+    └── expect.exp
+    
