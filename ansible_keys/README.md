@@ -31,4 +31,4 @@ expect/<br>
 [4]. ./expect.sh 或者 sh expect.sh，然后根据提示依次执行即可。<br>
 
 ## 说明
-正常情况下，只需要2不走，即编辑文件：conf/passwd.txt，然后执行脚本：./expect.sh，如果分发的不是root密钥，请修改scripts/expect.exp中的相关变量。<br>
+正常情况下，只需要两步走，即编辑文件：conf/passwd.txt，然后执行脚本：./expect.sh，如果分发的不是root密钥，请修改scripts/expect.exp中的相关变量。<br>
