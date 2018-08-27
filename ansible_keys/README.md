@@ -11,13 +11,22 @@
 
 ## 脚本结构
 脚本目录如下：<br>
-[renxiaowei]$ tree expect/
-expect/
-├── conf
-│   ├── check_ip.sh
-│   ├── check_ssh.sh
-│   └── passwd.txt
-├── expect.sh
-└── scripts
-    └── expect.exp
-    
+[renxiaowei]$ tree expect/<br>
+expect/<br>
+├── conf<br>
+│   ├── check_ip.sh<br>
+│   ├── check_ssh.sh<br>
+│   └── passwd.txt<br>
+├── expect.sh<br>
+└── scripts<br>
+    └── expect.exp<br>
+[1]. expect.sh为脚本执行入口；<br>
+[2]. scripts为核心脚本目录，scripts目录下的expect.exp为expect脚本，脚本中set部分为要用到的变量；<br>
+[3]. conf为目标服务器配置文件（passwd.txt）、ip（check_ip.sh）及免密登陆(check_ssh.sh)检测脚本，其中IP及免密检测脚本不建议修改，目标服务器配置文件强烈建议修改，格式请见上文，每台服务器写一行；<br>
+
+## 脚本使用方法
+[1]. 下载本项目；<br>
+[2]. cd expect;<br>
+[3]. 编辑目标服务器文件：vim conf/passwd.txt;<br>
+[4]. ./expect.sh 或者 sh expect.sh，然后根据提示依次执行即可。<br>
+
