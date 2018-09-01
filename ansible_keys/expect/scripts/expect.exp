@@ -11,7 +11,7 @@ proc script_dir {} {
  
 set timeout 60 
 set local_dir [script_dir]
-set local_ssh_file "/Users/xwren/.ssh/id_rsa.pub"
+set local_ssh_file "/root/.ssh/id_rsa.pub"
 set host [lindex $argv 0]
 set port [lindex $argv 1]
 set user [lindex $argv 2]
