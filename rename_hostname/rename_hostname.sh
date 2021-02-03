@@ -1,5 +1,5 @@
 #!/bin/bash
-# 功能：一键修改服务器主机名，仅支持centos6
+# 功能：一键修改服务器主机名，仅支持centos6／centos7
 # 作者：任小为 renxiaowei@cnstrong.cn
 # version: v2.0
 
